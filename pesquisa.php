@@ -113,7 +113,7 @@ $result = mysqli_fetch_assoc($query);
                 $r_diretor  = $value['diretor'];
                 $r_dur = $value['duracao'];
                 $r_class = $value['faixa_etaria'];
-                $id_tp = $value['tipo'];
+                $r_tp = $value['tipo'];
 
 
 
@@ -137,7 +137,7 @@ $result = mysqli_fetch_assoc($query);
                     </div>
                 </main>
                 <footer>
-                    <a href="?pesquisa=<?=$r_nome?>"><span>Ver <?= $result['tipo'] ?></span></a>
+                    <a href="?pesquisa=<?=$r_nome?>"><span>Ver <?= $r_tp ?></span></a>
                 </footer>
             </section>
 
@@ -158,13 +158,13 @@ $result = mysqli_fetch_assoc($query);
             <nav>
                 <ul>
                     <h3>Siga as nossas redes sociais</h3>
-                    <a href="">
+                    <a class="link-footer" href="">
                         <li>Instagram</li>
                     </a>
-                    <a href="">
+                    <a class="link-footer" href="">
                         <li>Twitter</li>
                     </a>
-                    <a href="">
+                    <a class="link-footer" href="">
                         <li>Facebook</li>
                     </a>
                 </ul>
