@@ -1,21 +1,17 @@
 <?php
 require_once __DIR__ . "/auxiliar.php";
 
-$sql = "SELECT le.nome, te.nome as tipo, le.faixa_etaria, le.diretor, le.sinopse, le.duracao, ce.nome as categoria
+$pesquisa = $_GET['pesquisa'];
+
+$sql = "SELECT le.id, le.nome, te.nome as tipo, le.faixa_etaria, le.diretor, le.sinopse, le.duracao, le.lancamento, ce.nome as categoria
 FROM listagem_entretenimentos as le
 INNER JOIN tipos_entretenimento as te on le.id_tipo = te.id
 INNER JOIN listagem_entretenimentos_connect_categorias as lec on le.id = lec.id_listagem_entretenimentos
-LEFT JOIN categorias_entretenimento as ce on ce.id = lec.id_categorias WHERE le.nome LIKE '%estrela%'";
+LEFT JOIN categorias_entretenimento as ce on ce.id = lec.id_categorias WHERE le.nome LIKE '%$pesquisa%' limit 1";
 
 $query = mysqli_query($conn, $sql);
 
 $result = mysqli_fetch_assoc($query);
-
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
-print_r($result);
 
 $nome_filme = $result['nome'];
 
@@ -36,7 +32,7 @@ $id_tpmain = $result['tipo'];
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header class="topheader">
         <h1 class="tlt">Entretenimentos</h1>
     </header>
 
@@ -46,8 +42,9 @@ $id_tpmain = $result['tipo'];
             <span>
                 <?= $result['faixa_etaria'] ?? " -- " ?> |
                 <?= $result['duracao'] ?? " --:-- " ?> |
+                <?= $result['lancamento'] ?? " --:-- " ?> |
                 <?= $result['tipo'] ?? " -- " ?> |
-                <?= $result['categoria'] ?? " -- " ?> |
+                <?= $result['categoria'] ?? " -- " ?>
             </span>
         </header>
 
@@ -61,7 +58,7 @@ $id_tpmain = $result['tipo'];
         </nav>
 
         <main>
-            <h2>Sobre o(a) tipo</h2>
+            <h2>Sobre o(a) <?=$result['tipo']?></h2>
 
             <div>
                 <strong>Nome: <?= $result['nome'] ?></strong>
@@ -80,7 +77,7 @@ $id_tpmain = $result['tipo'];
             </div>
 
             <div>
-                <strong>Lançamento: </strong> <!-- Não tem informação, eu acho -->
+                <strong>Lançamento: <?= $result['lancamento'] ?></strong> <!-- Não tem informação, eu acho -->
             </div>
 
             <div>
@@ -88,22 +85,24 @@ $id_tpmain = $result['tipo'];
             </div>
         </main>
 
-        <div class="propaganda">
-            <p>ESPAÇO PARA A PROPAGANDA</p>
-        </div>
-
-        <main>
+        <main class="sinopse">
             <h2>Sinopse</h2>
             <p><?= $result['sinopse'] ?></p>
         </main>
 
+        <div class="propaganda">
+            <p>ESPAÇO PARA A PROPAGANDA</p>
+        </div>
+        
         <main>
             <h2>Recentes</h2>
             <div class="grid">
 
 
             <?php
-            $query_recentes = "SELECT * FROM listagem_entretenimentos WHERE nome <> '$nome_filme' limit 6;";
+            $query_recentes = "SELECT le.id, le.nome, te.nome as tipo, le.faixa_etaria, le.diretor, le.duracao
+            FROM listagem_entretenimentos as le
+            INNER JOIN tipos_entretenimento as te on le.id_tipo = te.id WHERE le.id <> $result[id]";
 
             $recentes = mysqli_query($conn, $query_recentes);
 
@@ -118,19 +117,7 @@ $id_tpmain = $result['tipo'];
                 $r_diretor  = $value['diretor'];
                 $r_dur = $value['duracao'];
                 $r_class = $value['faixa_etaria'];
-                $id_tp = $value['id_tipo'];
-
-
-                $tipo_query = "  SELECT
-                    `listagem_entretenimentos`.id_tipo, `tipos_entretenimento`.nome
-                    FROM `listagem_entretenimentos`
-                    INNER JOIN `tipos_entretenimento`
-                    ON `listagem_entretenimentos`.id_tipo = `tipos_entretenimento`.id
-                    WHERE `listagem_entretenimentos`.id = $id_tp";
-
-                    $tipo_pesquisa = mysqli_query($conn, $tipo_query);
-
-                    $resultado_pesquisa = mysqli_fetch_assoc($tipo_pesquisa);
+                $id_tp = $value['tipo'];
 
 
 
@@ -154,7 +141,7 @@ $id_tpmain = $result['tipo'];
                     </div>
                 </main>
                 <footer>
-                    <a href="#"><span>Link <?= $resultado_pesquisa['nome'] ?></span></a>
+                    <a href="?pesquisa=<?=$r_nome?>"><span>Ver <?= $result['tipo'] ?></span></a>
                 </footer>
             </section>
 
@@ -166,9 +153,10 @@ $id_tpmain = $result['tipo'];
 
         </main>
         </div>
-        <a href="#">Topo</a>
     </section>
 
+    <a class="topo" href="#"><img src="img/top_arrow.png" alt=""></a>
+    
     <footer class="u">
         <section>
             <nav>
