@@ -8,13 +8,24 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.sinopse{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    background-color: #b0db8c;
+    border-radius: 15px;
+    padding: 15px;
+}
+
 .tlt {
     width: 100%;
     padding: 20px;
     text-align: center;
     background-color: #a3c585;
     text-transform: uppercase;
-    position: fixed;
+}
+
+.topheader{
+    position: sticky;
     top: 0%;
 }
 
@@ -45,16 +56,37 @@ nav ul li {
     margin-right: 10px;
 }
 
-div.propraganda {
+div.propaganda {
+    position: relative;
     background-color: #a3c585;
     margin: 30px 0px;
     height: 150px;
+    z-index: -2;
+}
+
+.propaganda > p{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    
+    
 }
 
 section.recentes {
     width: 350px;
     border: 1px solid;
     border-radius: 10px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+a{
+    color:#61b419;
 }
 
 .recentes header div {
@@ -73,17 +105,13 @@ section.recentes {
     padding: 3px;
 }
 
-a {
-    font-size: 20px;
-    font-weight: bolder;
-    text-decoration: none;
-    color: #ffffff;
-    border: solid 1px #000000;
-    border-radius: 50%;
-    background-color: #000000;
+.topo {
     position: fixed;
     bottom: 10px;
-    right: 10px;
+    right: -110px;
+}
+.topo img{
+    width: 50%;
 }
 
 footer.u {
