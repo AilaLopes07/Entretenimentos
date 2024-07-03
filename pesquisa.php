@@ -14,10 +14,6 @@ $query = mysqli_query($conn, $sql);
 $result = mysqli_fetch_assoc($query);
 
 
-
-
-
-
 /// $result['informações'] --- nome, faixa_etaria, diretor, duracao, sinopse, categoria;
 
 ?>
