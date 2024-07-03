@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pesquisa</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="topheader">
+        <h1 class="tlt">Entretenimentos</h1>
+    </header>
     
+    <main>
     <form action="pesquisa.php" method="get">
-        <label for="pesquisa">Pesquisa</label>
-        <input type="search" id="pesquisa" name="pesquisa">
+        <div style="margin: auto; width: 50%; text-align: center; margin-top: 10px;">
+            <label for="pesquisa">Pesquisa</label>
+            <br>
+            <input style="width: 60%; height: 30px; border-radius: 10px; border: 1px solid green;" type="text" id="pesquisa" name="pesquisa">
+        </div>
     </form>
+</main>
 </body>
 </html>

@@ -13,10 +13,10 @@ $query = mysqli_query($conn, $sql);
 
 $result = mysqli_fetch_assoc($query);
 
-$nome_filme = $result['nome'];
 
 
-$id_tpmain = $result['tipo'];
+
+
 
 /// $result['informações'] --- nome, faixa_etaria, diretor, duracao, sinopse, categoria;
 
@@ -77,11 +77,11 @@ $id_tpmain = $result['tipo'];
             </div>
 
             <div>
-                <strong>Lançamento: <?= $result['lancamento'] ?></strong> <!-- Não tem informação, eu acho -->
+                <strong>Lançamento: <?= $result['lancamento'] ?></strong> 
             </div>
 
             <div>
-                <strong>Categorias: <?= $result['categoria']?></strong> <!-- Não tem também , vai ter que mudar no banco de dados depois -->
+                <strong>Categorias: <?= $result['categoria']?></strong> 
             </div>
         </main>
 
@@ -162,9 +162,15 @@ $id_tpmain = $result['tipo'];
             <nav>
                 <ul>
                     <h3>Siga as nossas redes sociais</h3>
-                    <li>Instagram</li>
-                    <li>Twitter</li>
-                    <li>Facebook</li>
+                    <a href="">
+                        <li>Instagram</li>
+                    </a>
+                    <a href="">
+                        <li>Twitter</li>
+                    </a>
+                    <a href="">
+                        <li>Facebook</li>
+                    </a>
                 </ul>
             </nav>
         </section>
