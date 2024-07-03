@@ -45,16 +45,32 @@ nav ul li {
     margin-right: 10px;
 }
 
-div.propraganda {
+div.propaganda {
+    position: relative;
     background-color: #a3c585;
     margin: 30px 0px;
     height: 150px;
+}
+
+.propaganda > p{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    
+    
 }
 
 section.recentes {
     width: 350px;
     border: 1px solid;
     border-radius: 10px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }
 
 .recentes header div {
