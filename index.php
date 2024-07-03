@@ -1,32 +1,27 @@
 <?php
 require_once __DIR__ . "/auxiliar.php";
 
-$sql = "SELECT le.nome, le.faixa_etaria, le.diretor, le.duracao, le.sinopse, le.id_tipo, ce.nome as categoria FROM listagem_entretenimentos as le INNER JOIN listagem_entretenimentos_connect_categorias as lec on le.id = lec.id_listagem_entretenimentos LEFT JOIN categorias_entretenimento as ce on ce.id = lec.id_categorias LIKE '%estrelas%' ;";
+$sql = "SELECT le.nome, te.nome as tipo, le.faixa_etaria, le.diretor, le.sinopse, le.duracao, ce.nome as categoria
+FROM listagem_entretenimentos as le
+INNER JOIN tipos_entretenimento as te on le.id_tipo = te.id
+INNER JOIN listagem_entretenimentos_connect_categorias as lec on le.id = lec.id_listagem_entretenimentos
+LEFT JOIN categorias_entretenimento as ce on ce.id = lec.id_categorias WHERE le.nome LIKE '%estrela%'";
 
 $query = mysqli_query($conn, $sql);
 
 $result = mysqli_fetch_assoc($query);
 
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
 print_r($result);
 
 $nome_filme = $result['nome'];
 
 
-$id_tpmain = $result['id_tipo'];
+$id_tpmain = $result['tipo'];
 
-
-$tipo_query = "  SELECT
-    `listagem_entretenimentos`.id_tipo, `tipos_entretenimento`.nome
-    FROM `listagem_entretenimentos`
-    INNER JOIN `tipos_entretenimento`
-    ON `listagem_entretenimentos`.id_tipo = `tipos_entretenimento`.id
-    WHERE `listagem_entretenimentos`.id = $id_tpmain";
-
-    $tipo_pesquisa = mysqli_query($conn, $tipo_query);
-
-    $resultado_pesquisa = mysqli_fetch_assoc($tipo_pesquisa);
-
-    $tipo_main = $resultado_pesquisa['nome'];
 /// $result['informações'] --- nome, faixa_etaria, diretor, duracao, sinopse, categoria;
 
 ?>
