@@ -1,7 +1,11 @@
 <?php
 require_once __DIR__ . "/auxiliar.php";
 
-$sql = "SELECT le.nome, le.faixa_etaria, le.diretor, le.duracao, le.sinopse, ce.nome as categoria FROM listagem_entretenimentos as le INNER JOIN listagem_entretenimentos_connect_categorias as lec on le.id = lec.id_listagem_entretenimentos LEFT JOIN categorias_entretenimento as ce on ce.id = lec.id_categorias LIKE '%estrelas%' ;";
+$sql = "SELECT le.nome, te.nome as tipo, le.faixa_etaria, le.diretor, le.sinopse, le.duracao, ce.nome as categoria
+FROM listagem_entretenimentos as le
+INNER JOIN tipos_entretenimento as te on le.id_tipo = te.id
+INNER JOIN listagem_entretenimentos_connect_categorias as lec on le.id = lec.id_listagem_entretenimentos
+LEFT JOIN categorias_entretenimento as ce on ce.id = lec.id_categorias WHERE le.nome LIKE '%estrela%'";
 
 $query = mysqli_query($conn, $sql);
 
@@ -22,6 +26,7 @@ print_r($result);
     <title>Filme - <?= $result['nome'] ?></title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1 class="tlt">Entretenimentos</h1>
@@ -123,4 +128,5 @@ print_r($result);
         </section>
     </footer>
 </body>
+
 </html>
