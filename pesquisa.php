@@ -158,14 +158,14 @@ $result = mysqli_fetch_assoc($query);
             <nav>
                 <ul>
                     <h3>Siga as nossas redes sociais</h3>
-                    <a class="link-footer" href="">
-                        <li>Instagram</li>
+                    <a href="">
+                        <li class="link-footer">Instagram</li>
                     </a>
-                    <a class="link-footer" href="">
-                        <li>Twitter</li>
+                    <a href="">
+                        <li class="link-footer">Twitter</li>
                     </a>
-                    <a class="link-footer" href="">
-                        <li>Facebook</li>
+                    <a href="">
+                        <li class="link-footer">Facebook</li>
                     </a>
                 </ul>
             </nav>
