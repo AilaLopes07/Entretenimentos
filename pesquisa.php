@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/auxiliar.php";
+require_once __DIR__ . "/auxiliares/auxiliar.php";
 
 $pesquisa = $_GET['pesquisa'];
 

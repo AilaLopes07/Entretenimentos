@@ -1,11 +1,18 @@
 <?php
-session_start();
-include 'auxiliar.php';
+require_once __DIR__ . "/auxiliares/auxiliar.php";
 
 // $_SESSION ;
 // $usuario_sql = "SELECT nome FROM usuarios WHERE id = 2";
 // $usuario_query =mysqli_fetch_assoc(mysqli_query($conn, $usuario_sql));
-// var_dump($_SESSION);
+var_dump($_SESSION);
+
+if (empty($_SESSION)){
+    header("location: login.php");
+}
+
+$nivel_user = $_SESSION['nivel'];
+
+
 
 ?>
 <!DOCTYPE html>
@@ -19,9 +26,14 @@ include 'auxiliar.php';
 <body>
     <header class="topheader">
         <h1 class="tlt">Entretenimentos</h1>
-        <a href="login.html" class="button">Login</a><br>
-        <a href="cadastro.html" class="button">Cadastre-se</a><br>
-        <strong>Bem vindo, <?=$_SESSION['username']?>convidado</strong>
+        <strong>Bem vindo, <?php
+        // Verifica se possui uma session, caso n possua exibe o nome como convidado
+        if (!empty($_SESSION)){
+            echo $_SESSION['username'];
+        } else {
+            echo "convidado";
+        }
+        ?></strong>
         <a href="sair.php">Sair</a>
         </header>
     
