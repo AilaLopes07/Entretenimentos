@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/auxiliares/auxiliar.php";
+require_once __DIR__ . "/../auxiliares/auxiliar.php";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $result['nome'];
             // armazenando o nivel do usuário
             $_SESSION['nivel'] = $result['id_nivel'];
-            header("Location: index.php");
+            header("Location: admin.php");
             exit;
         } else{
             echo "Login ou senha inválidos.";
