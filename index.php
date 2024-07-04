@@ -13,9 +13,9 @@ if (empty($_SESSION)){
 $nivel_user = $_SESSION['nivel'];
 
 if ($nivel_user <= 3) {
-    $admin = true;
+    $admin = "block";
 } else {
-    $admin = false;
+    $admin = "none";
 }
 
 ?>
@@ -26,10 +26,17 @@ if ($nivel_user <= 3) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pesquisa</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .div-admin-img{
+            display: <?= $admin ?>;
+        }
+    </style>
 </head>
 <body>
     <header class="topheader">
+        <div class="div-admin-img">
         <a href="admin.php"><img class="admin-img" src="img/admin-icon.png" alt=""></a>
+        </div>
         <h1 class="tlt">Entretenimentos</h1>
     </header>
     
