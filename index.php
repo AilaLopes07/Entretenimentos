@@ -29,7 +29,7 @@ if ($nivel_user <= 3) {
 </head>
 <body>
     <header class="topheader">
-        <a href="admin.php"><img class="admin-img" src="img/admin-icon.png" alt=""></a>
+        <a href="admin.php"><img class="admin-img" src="img/admin-icon.png" alt="admin"></a>
         <h1 class="tlt">Entretenimentos</h1>
     </header>
     
