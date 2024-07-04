@@ -18,8 +18,6 @@ if ($nivel_user <= 3) {
     $admin = false;
 }
 
-echo $admin;
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
