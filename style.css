@@ -22,6 +22,7 @@ body {
     text-align: center;
     background-color: #a3c585;
     text-transform: uppercase;
+    display: inline-block;
 }
 
 .topheader{
@@ -127,4 +128,8 @@ footer section {
 .link-footer{
     color: #2e6300;
     text-decoration: underline;
+}
+
+.admin-img{
+    width: 2%;
 }
