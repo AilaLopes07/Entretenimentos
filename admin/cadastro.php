@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/auxiliares/auxiliar.php";
+require_once __DIR__ . "/../auxiliares/auxiliar.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "INSERT INTO usuarios (nome, email, senha, `login`, id_nivel) VALUES ('$username', '$email', '$password', '$login', '$idnivel')";
     if (mysqli_query($conn, $sql)) {
-        header("Location: index.php");
+        header("Location: admin.php");
     } else {
         echo "Erro ao cadastrar usuário: " . mysqli_error($conn);
     }

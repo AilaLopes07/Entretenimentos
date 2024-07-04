@@ -1,5 +1,9 @@
 <?php
-require_once __DIR__ . "/auxiliares/auxiliar.php";
+require_once __DIR__ . "/../auxiliares/auxiliar.php";
+
+if (empty($_SESSION)){
+    header("location: login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -62,12 +66,17 @@ require_once __DIR__ . "/auxiliares/auxiliar.php";
         main{
             display: flex;
         }
+        .sair{
+            position: absolute;
+            bottom: 20px;
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
     <main>
         <nav>
-            <img style="width: 70px; margin-left: 10px; margin-top: 10px;" src="img/config_certo.png" alt="configurações">
+            <img style="width: 70px; margin-left: 10px; margin-top: 10px;" src="../img/config_certo.png" alt="configurações">
             <ul>
                 <a href="#"><li>Perfil</li></a>
                 <a href="#"><li>Níveis de usuário</li></a>
@@ -75,11 +84,14 @@ require_once __DIR__ . "/auxiliares/auxiliar.php";
                 <a href="#"><li>Tipos</li></a>
                 <a href="#"><li>Categorias</li></a>
                 <a href="#"><li>Entretenimentos</li></a>
+                <a href="../index.php"><li>Voltar</li></a>
             </ul>
+            <div class="sair">
+                <a href="../auxiliares/sair.php">Sair</a>
+            </div>
         </nav>
         <h1>Configurações</h1>
-        <h2>Bem vindo : <?= $_SESSION['username'] ?></h2>
+        <h2>Bem vindo <?= $_SESSION['username'] ?></h2>
     </main>
-
 </body>
 </html>
