@@ -1,3 +1,13 @@
+<?php
+session_start();
+include 'auxiliar.php';
+
+// $_SESSION ;
+// $usuario_sql = "SELECT nome FROM usuarios WHERE id = 2";
+// $usuario_query =mysqli_fetch_assoc(mysqli_query($conn, $usuario_sql));
+// var_dump($_SESSION);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +19,11 @@
 <body>
     <header class="topheader">
         <h1 class="tlt">Entretenimentos</h1>
-    </header>
+        <a href="login.html" class="button">Login</a><br>
+        <a href="cadastro.html" class="button">Cadastre-se</a><br>
+        <strong>Bem vindo, <?=$_SESSION['username']?>convidado</strong>
+        <a href="sair.php">Sair</a>
+        </header>
     
     <main>
     <form action="pesquisa.php" method="get">
