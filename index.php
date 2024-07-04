@@ -12,7 +12,13 @@ if (empty($_SESSION)){
 
 $nivel_user = $_SESSION['nivel'];
 
+if ($nivel_user <= 3) {
+    $admin = true;
+} else {
+    $admin = false;
+}
 
+echo $admin;
 
 ?>
 <!DOCTYPE html>
@@ -25,7 +31,11 @@ $nivel_user = $_SESSION['nivel'];
 </head>
 <body>
     <header class="topheader">
+        <a href="admin.php"><img class="admin-img" src="img/admin-icon.png" alt=""></a>
         <h1 class="tlt">Entretenimentos</h1>
+    </header>
+    
+    <main>
         <strong>Bem vindo, <?php
         // Verifica se possui uma session, caso n possua exibe o nome como convidado
         if (!empty($_SESSION)){
@@ -35,10 +45,7 @@ $nivel_user = $_SESSION['nivel'];
         }
         ?></strong>
         <a href="sair.php">Sair</a>
-        </header>
-    
-    <main>
-    <form action="pesquisa.php" method="get">
+        <form action="pesquisa.php" method="get">
         <div style="margin: auto; width: 50%; text-align: center; margin-top: 10px;">
             <label for="pesquisa">Pesquisa</label>
             <br>
