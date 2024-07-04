@@ -4,7 +4,7 @@ require_once __DIR__ . "/auxiliares/auxiliar.php";
 // $_SESSION ;
 // $usuario_sql = "SELECT nome FROM usuarios WHERE id = 2";
 // $usuario_query =mysqli_fetch_assoc(mysqli_query($conn, $usuario_sql));
-var_dump($_SESSION);
+// var_dump($_SESSION);
 
 if (empty($_SESSION)){
     header("location: login.php");
