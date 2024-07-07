@@ -28,6 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -45,11 +47,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="password" name="password" placeholder="Senha" required>
                 <input type="submit" value="ENTRE">
                 <p>Novo aqui? <a href="cadastro.php">Cadastre-se</a></p>
-                <p>Faça sua pesquisa. <a href="index.php">Tela inicial.</a></p>
+                <p>Faça sua pesquisa. <a href="/Entretenimentos-main/index.php">Tela inicial.</a></p>
 
             </form>
         </div>
-        <a href="cadastro.php" class="button">Cadastre-se</a><br>
     </div>
 </body>
 </html>
