@@ -54,7 +54,7 @@ $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
             </select>
                 <input type="submit" value="CADASTRAR">
                 <p>Já tem uma conta? <a href="login.php">Entre</a></p>
-                <p>Faça sua pesquisa. <a href="index.php">Tela inicial.</a></p>
+                <p>Faça sua pesquisa. <a href="/Entretenimentos-main/index.php">Tela inicial.</a></p>
 
             </form>
 </body>
