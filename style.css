@@ -8,6 +8,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 .sinopse{
     margin-top: 15px;
     margin-bottom: 20px;
@@ -16,18 +17,30 @@ body {
     padding: 15px;
 }
 
+.topheader > img{
+    width: 50px;
+}
+
 .tlt {
     /* width: 100%; */
-    padding: 20px;
-    text-align: center;
+    /* padding: 20px; */
+    /* text-align: center; */
     text-transform: uppercase;
     /* display: block; */
+    width: fit-content;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 8vh;
+    left: 50%;
 }
 
 .topheader{
     position: sticky;
     top: 0%;
     background-color: #a3c585;
+    width: 100%;
+    padding: 20px;
+    height: 15vh;
 }
 
 section.container {

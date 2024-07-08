@@ -29,6 +29,7 @@ $result = mysqli_fetch_assoc($query);
 </head>
 <body>
     <header class="topheader">
+        <img style="width: 50px;" src="img/home_logo.png" alt="Voltar para home">
         <h1 class="tlt">Entretenimentos</h1>
     </header>
 
