@@ -80,7 +80,7 @@ if (empty($_SESSION)){
             <ul>
                 <a href="#"><li>Perfil</li></a>
                 <a href="#"><li>Níveis de usuário</li></a>
-                <a href="#"><li>Usuários</li></a>
+                <a href="usuarios.php"><li>Usuários</li></a>
                 <a href="#"><li>Tipos</li></a>
                 <a href="#"><li>Categorias</li></a>
                 <a href="#"><li>Entretenimentos</li></a>
