@@ -8,7 +8,7 @@ if (empty($_GET['id'])) {
     $id = $_GET['id'];
 }
 
-$query = "SELECT nome,email,`login` FROM usuarios WHERE id = $id";
+$query = "SELECT nome,email,`login`,id_nivel FROM usuarios WHERE id = $id";
 $dados = mysqli_query($conn, $query);
 $af = mysqli_fetch_assoc($dados);
 
@@ -43,8 +43,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $alogin = mysqli_query($conn, $updlogin);
         
     }
+
+    if ($_POST['id_nivel'] == $af['id_nivel']) {
+        
+    } else {
+        $nivel = $_POST['id_nivel'];
+        $updnivel = "UPDATE usuarios
+                     SET id_nivel = '$nivel'
+                     WHERE id = $id";
+        $anivel = mysqli_query($conn, $updnivel);
+        
+    }
     
 }
+
+// Níveis
+
+$sql = "SELECT id, nome FROM niveis_usuario WHERE `status` = 'ativo'";
+
+$query = mysqli_query($conn, $sql);
+
+$result = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
 ?>
 
@@ -61,6 +80,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="email" name="email" placeholder="Email" value="<?= $af['email'] ?>" required><br>
     <input type="text" name="login" placeholder="login" value="<?= $af['login'] ?>" required><br>
     <input type="submit" value="Editar">
+    <select id="nivel" name="id_nivel"><br>
+            <?php
+            foreach($result as $value){
+            ?>
+                <option value="<?= $value['id'] ?>"><?= $value['nome'] ?></option>
+            <?php
+            }   
+            ?>
+            </select>
     </form>
     
 </body>
