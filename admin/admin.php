@@ -78,12 +78,12 @@ if (empty($_SESSION)){
         <nav>
             <img style="width: 70px; margin-left: 10px; margin-top: 10px;" src="../assets/config_certo.png" alt="configurações">
             <ul>
-                <a href="#"><li>Perfil</li></a>
-                <a href="#"><li>Níveis de usuário</li></a>
+                <a href="perfil.php"><li>Perfil</li></a>
+                <a href="niveis_usuarios.php"><li>Níveis de usuário</li></a>
                 <a href="usuarios.php"><li>Usuários</li></a>
-                <a href="#"><li>Tipos</li></a>
-                <a href="#"><li>Categorias</li></a>
-                <a href="#">entretenimentos.php<li>Entretenimentos</li></a>
+                <a href="tipos_entretenimentos.php"><li>Tipos</li></a>
+                <a href="categoria.php"><li>Categorias</li></a>
+                <a href="entretenimentos.php"><li>Entretenimentos</li></a>
                 <a href="../index.php"><li>Voltar</li></a>
             </ul>
             <div class="sair">
