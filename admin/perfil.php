@@ -62,7 +62,6 @@ tbody tr:hover{
             <td>Email</td>
             <td>Login</td>
             <td>Nível</td>
-            <td colspan="2">Ações</td>
             
         </thead>
         <tbody>
