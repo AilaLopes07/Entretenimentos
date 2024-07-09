@@ -3,13 +3,17 @@ require_once __DIR__ . "/auxiliares/auxiliar.php";
 
 $pesquisa = $_GET['pesquisa'];
 
-$sql = "SELECT le.id, le.nome, te.nome as tipo, le.faixa_etaria, le.diretor, le.sinopse, le.duracao, le.lancamento, ce.nome as categoria
+$sql = "SELECT le.id, le.nome, le.imagem, te.nome as tipo, le.faixa_etaria, le.diretor, le.sinopse, le.duracao, le.lancamento, ce.nome as categoria
 FROM listagem_entretenimentos as le
 INNER JOIN tipos_entretenimento as te on le.id_tipo = te.id
 INNER JOIN listagem_entretenimentos_connect_categorias as lec on le.id = lec.id_listagem_entretenimentos
 LEFT JOIN categorias_entretenimento as ce on ce.id = lec.id_categorias WHERE le.nome LIKE '%$pesquisa%' limit 1";
 
 $query = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($query) == 0 || $pesquisa == '' || $pesquisa == ' ' && isset($pesquisa)) {
+    header("location: index.php");
+}
 
 $result = mysqli_fetch_assoc($query);
 
@@ -29,11 +33,13 @@ $result = mysqli_fetch_assoc($query);
 </head>
 <body>
     <header class="topheader">
-        <img style="width: 50px;" src="img/home_logo.png" alt="Voltar para home">
+        <img style="width: 50px;" src="assets/home_logo.png" alt="Voltar para home">
         <h1 class="tlt">Entretenimentos</h1>
     </header>
-
+    
+    
     <section class="container">
+        <img class="imagemfilme" src="img/noimage.jpg" alt="">
         <header>
             <h1><?= $result['nome'] ?></h1>
             <span>
@@ -53,7 +59,7 @@ $result = mysqli_fetch_assoc($query);
                 <li><a href="#">Facebook</a></li>
             </ul>
         </nav>
-
+        
         <main>
             <h2>Sobre o(a) <?=$result['tipo']?></h2>
 
@@ -152,7 +158,7 @@ $result = mysqli_fetch_assoc($query);
         </div>
     </section>
 
-    <a class="topo" href="#"><img src="img/top_arrow.png" alt=""></a>
+    <a class="topo" href="#"><img src="assets/top_arrow.png" alt=""></a>
     
     <footer class="u">
         <section>

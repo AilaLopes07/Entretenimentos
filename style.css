@@ -57,6 +57,10 @@ section.container h2 {
     margin-bottom: 10px;
 }
 
+.imagemfilme{
+    width: 100px;
+}
+
 main p {
     text-indent: 60px;
 }
