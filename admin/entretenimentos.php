@@ -83,7 +83,7 @@ tbody tr:hover{
 </style>
 </head>
 <body>
-
+<h1>Lista de Entretenimentos</h1>
 
 <form method="post"  enctype="multipart/form-data" action="">
     <p><label for=""> selecione o arquivo</label>
