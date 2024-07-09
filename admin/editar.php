@@ -44,14 +44,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
     }
 
-    if (empty($_POST['nivel']) or $_POST['nivel'] == $af['id_nivel']) {
+    if ($_POST['id_nivel'] == $af['id_nivel']) {
         
     } else {
-        $nivel = $_POST['nivel'];
-        $updlogin = "UPDATE usuarios
+        $nivel = $_POST['id_nivel'];
+        $updnivel = "UPDATE usuarios
                      SET id_nivel = '$nivel'
                      WHERE id = $id";
-        $alogin = mysqli_query($conn, $updlogin);
+        $anivel = mysqli_query($conn, $updnivel);
         
     }
     
