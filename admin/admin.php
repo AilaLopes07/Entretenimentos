@@ -76,7 +76,7 @@ if (empty($_SESSION)){
 <body>
     <main>
         <nav>
-            <img style="width: 70px; margin-left: 10px; margin-top: 10px;" src="../img/config_certo.png" alt="configurações">
+            <img style="width: 70px; margin-left: 10px; margin-top: 10px;" src="../assets/config_certo.png" alt="configurações">
             <ul>
                 <a href="#"><li>Perfil</li></a>
                 <a href="#"><li>Níveis de usuário</li></a>
