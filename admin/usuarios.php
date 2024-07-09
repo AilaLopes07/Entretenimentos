@@ -41,7 +41,7 @@ $table = mysqli_fetch_all($select, MYSQLI_ASSOC);
 </head>
 <body>
     <p><?= $_SESSION['nivel'] ?></p>
-    <a href=""><img class="icon" src="../img/mais_icon.png" alt="Ícone de mais"></a>
+    <a href="cadastro.php"><img class="icon" src="../img/mais_icon.png" alt="Ícone de mais"></a>
 
     <table>
         <thead>
