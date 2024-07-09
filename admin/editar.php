@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__ . "/../auxiliares/auxiliar.php";
-require_once __DIR__ . "/../auxiliares/restrito.php";
 
 if (!empty($_GET['id'])) {
     $id = $_GET['id'];
