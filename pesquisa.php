@@ -39,7 +39,7 @@ $result = mysqli_fetch_assoc($query);
     
     
     <section class="container">
-        <img class="imagemfilme" src="img/noimage.jpg" alt="">
+        <img class="imagemfilme" src="img/<?= $result['imagem'] ?>.jpg" alt="">
         <header>
             <h1><?= $result['nome'] ?></h1>
             <span>
