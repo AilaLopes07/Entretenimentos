@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__ . "/../auxiliares/auxiliar.php";
-require_once __DIR__ . "/../auxiliares/restrito.php";
 
 // if (empty($_SESSION['id_user'])) {
 //     header("Location: cadastro.php");
