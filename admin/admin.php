@@ -83,7 +83,7 @@ if (empty($_SESSION)){
                 <a href="usuarios.php"><li>Usuários</li></a>
                 <a href="#"><li>Tipos</li></a>
                 <a href="#"><li>Categorias</li></a>
-                <a href="#"><li>Entretenimentos</li></a>
+                <a href="#">entretenimentos.php<li>Entretenimentos</li></a>
                 <a href="../index.php"><li>Voltar</li></a>
             </ul>
             <div class="sair">
