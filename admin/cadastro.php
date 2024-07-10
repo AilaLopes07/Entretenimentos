@@ -40,13 +40,17 @@ $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
         }
 
         .cadastro {
-            width: 300px;
-            margin: 5% auto;
+            width: 310px;
+            margin: 0% auto;
             border: 1px solid;
             border-radius: 10px;
             padding: 20px;
             text-align: center;
             font-size: 20px;
+        }
+
+        .cadastro .tt{
+            width: 300px;
         }
 
         h1 {
@@ -58,10 +62,10 @@ $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
 <body>
     <h1>Cadastre-se</h1>
     <form method="post" class="cadastro">
-        <input type="text" name="username" placeholder="Nome de usuário" required><br>
-        <input type="email" name="email" placeholder="Email" required><br>
-        <input type="password" name="password" placeholder="Senha" required><br>
-        <input type="text" name="login" placeholder="login" required><br>
+        <input class="tt" type="text" name="username" placeholder="Nome de usuário" required><br>
+        <input class="tt" type="email" name="email" placeholder="Email" required><br>
+        <input class="tt" type="password" name="password" placeholder="Senha" required><br>
+        <input style="margin-bottom: 20px" class="tt" type="text" name="login" placeholder="login" required><br>
         <!-- <input type="text" name="id_nivel" placeholder="1 a 5" required><br> -->
         <label for="nivel">Qual seu nivel administrativo:</label><br>
         <select id="nivel" name="id_nivel"><br>
