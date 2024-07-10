@@ -75,6 +75,7 @@ tbody tr:hover{
             <td>status</td>
             <td>data_cadastro</td>
             <td>data_edicao</td>
+            <td>Ações</td>
             
         </thead>
         <tbody>

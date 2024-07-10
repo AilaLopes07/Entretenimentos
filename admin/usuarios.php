@@ -56,7 +56,6 @@ $table = mysqli_fetch_all($select, MYSQLI_ASSOC);
 </head>
 <body>
     <h1>Lista de usuarios</h1>
-    <p><?= $_SESSION['nivel'] ?></p>
     <a href="cadastro.php"><img class="icon" src="../assets/mais_icon.png" alt="Ícone de mais"></a>
 
     <table>
@@ -66,7 +65,7 @@ $table = mysqli_fetch_all($select, MYSQLI_ASSOC);
             <td>Email</td>
             <td>Login</td>
             <td>Nível</td>
-            <td colspan="2">Ações</td>
+            <td>Ações</td>
             
         </thead>
         <tbody>

@@ -78,6 +78,7 @@ tbody tr:hover{
             <td>data_criacao</td>
             <td>id_usuario_edicao</td>
             <td>data_edicao</td>
+            <td>Ações</td>
             
         </thead>
         <tbody>
