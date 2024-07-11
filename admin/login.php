@@ -10,9 +10,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "SELECT id, nome, `login`, senha, id_nivel FROM usuarios WHERE `login`='$login' AND `status`='ativo'";
     $query = mysqli_query($conn, $sql);
 
+
     if (mysqli_num_rows($query) == 1) {
         $result = mysqli_fetch_assoc($query);
-        if ($result['senha'] == $password){
+        if (password_verify($password, $result['senha'])){
             $_SESSION['id_user'] = $result['id'];
             $_SESSION['login'] = $login;
             $_SESSION['username'] = $result['nome'];
@@ -27,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Login ou senha inválidos.";
     }
 }
+
 ?>
 
 
